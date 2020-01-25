@@ -10,19 +10,15 @@ describe PBMImage do
     end
   end
 
-  describe "#ascii_magic_number" do
-    it "returns P1" do
-      image = PBMImage.new(1,1)
-
-      image.ascii_magic_number.should eq "P1"
+  describe ".ASCII_MAGIC_NUMBER" do
+    it "equals P1" do
+      PBMImage::ASCII_MAGIC_NUMBER.should eq "P1"
     end
   end
 
-  describe "#binary_magic_number" do
+  describe ".BINARY_MAGIC_NUMBER" do
     it "returns ASCII binary for P4" do
-      image = PBMImage.new(1,1)
-
-      image.binary_magic_number.should eq "P4".bytes
+      PBMImage::BINARY_MAGIC_NUMBER.should eq "P4".bytes
     end
   end
 

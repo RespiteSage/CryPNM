@@ -3,6 +3,9 @@ require "string_scanner"
 
 module PNM
   class PBMImage
+    ASCII_MAGIC_NUMBER = "P1"
+    BINARY_MAGIC_NUMBER = "P4".bytes
+
     getter height : Int32
     getter width : Int32
     private getter bit_canvas : Array(BitArray)
@@ -13,7 +16,7 @@ module PNM
 
     def self.from_ascii(ascii)
       scanner = StringScanner.new ascii
-      scanner.scan(/P1\s+/)
+      scanner.scan(/#{ASCII_MAGIC_NUMBER}\s+/)
       width = scanner.scan(/\S+/).not_nil!.to_i
       scanner.skip(/\s+/)
       height = scanner.scan(/\S+/).not_nil!.to_i
@@ -38,14 +41,6 @@ module PNM
       image
     end
 
-    def ascii_magic_number
-      "P1"
-    end
-
-    def binary_magic_number
-      "P4".bytes
-    end
-
     def []=(column, row, value)
       bit_canvas[row][column] = !value.zero?
     end
@@ -56,7 +51,7 @@ module PNM
 
     def to_ascii
       String.build(capacity: 15 + 2 * width * height) do |builder|
-        builder << "#{ascii_magic_number}\n"
+        builder << "#{ASCII_MAGIC_NUMBER}\n"
         builder << "#{width} #{height}\n"
 
         builder << bit_canvas.join("\n") do |row|
