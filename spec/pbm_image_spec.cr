@@ -45,4 +45,24 @@ describe PBMImage do
       image[2,1].should eq ZERO_BIT
     end
   end
+
+  describe "#ascii_serialize" do
+    it "correctly serializes a simple image" do
+      image = PBMImage.new(2,2)
+
+      image[0,0] = 1
+      image[0,1] = 0
+      image[1,0] = 0
+      image[1,1] = 1
+
+      expected_ascii = <<-EXPECTED
+                          P1
+                          2 2
+                          1 0
+                          0 1
+                          EXPECTED
+      
+      image.ascii_serialize.should eq expected_ascii
+    end
+  end
 end

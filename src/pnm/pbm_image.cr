@@ -25,5 +25,18 @@ module PNM
     def [](column, row)
       bit_canvas[row][column]
     end
+
+    def ascii_serialize
+      String.build(capacity: 15 + 2 * width * height) do |builder|
+        builder << "#{ascii_magic_number}\n"
+        builder << "#{width} #{height}\n"
+
+        builder << bit_canvas.join("\n") do |row|
+          row.join(" ") do |bit|
+            bit ? 1 : 0
+          end
+        end
+      end
+    end
   end
 end
