@@ -1,0 +1,9 @@
+name: crypnm
+version: 0.1.0
+
+authors:
+  - Benjamin Wade
+
+crystal: 0.32.1
+
+license: MIT
