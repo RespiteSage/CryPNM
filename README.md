@@ -1,6 +1,9 @@
-# cryPNM
+# CryPNM
 
-TODO: Write a description here
+This library is intended to process and handle the NetPBM Portable Anymap (PNM)
+Formats: Portable Bitmap Format (PBM), Portable Graymap Format (PGM), and
+Portable Pixmap Format (PPM). For more information on these formats, ask
+[Wikipedia](https://en.wikipedia.org/wiki/Netpbm_format).
 
 ## Installation
 
