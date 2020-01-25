@@ -46,7 +46,7 @@ describe PBMImage do
     end
   end
 
-  describe "#ascii_serialize" do
+  describe "#to_ascii" do
     it "correctly serializes a simple image" do
       image = PBMImage.new(2,2)
 
@@ -62,7 +62,7 @@ describe PBMImage do
                           0 1
                           EXPECTED
       
-      image.ascii_serialize.should eq expected_ascii
+      image.to_ascii.should eq expected_ascii
     end
   end
 

@@ -54,7 +54,7 @@ module PNM
       bit_canvas[row][column]
     end
 
-    def ascii_serialize
+    def to_ascii
       String.build(capacity: 15 + 2 * width * height) do |builder|
         builder << "#{ascii_magic_number}\n"
         builder << "#{width} #{height}\n"
