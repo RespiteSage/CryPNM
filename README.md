@@ -12,7 +12,7 @@ Portable Pixmap Format (PPM). For more information on these formats, ask
    ```yaml
    dependencies:
      crypnm:
-       github: kinxer/crypnm
+       github: respitesage/crypnm
    ```
 
 2. Run `shards install`
@@ -31,7 +31,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/kinxer/crypnm/fork>)
+1. Fork it (<https://github.com/respitesage/crypnm/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -39,4 +39,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Benjamin Wade](https://github.com/kinxer) - creator and maintainer
+- [Benjamin Wade](https://github.com/respitesage) - creator and maintainer
